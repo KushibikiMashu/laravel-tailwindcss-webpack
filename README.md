@@ -1,4 +1,4 @@
-# laravel-tailwindcss-webpack
+# Laravel - Tailwind CSS - webpack
 Build assets without using laravel-mix.
 
 ## Installation
@@ -10,7 +10,7 @@ $ npm install
 
 ## Build a CSS file with tailwind CSS
 
-Run `$ npx webpack --mode development`. Webpack will produce `public/css/styles.bundle.css`. This file injects Tailwind's base styles.
+Run `$ npx webpack --mode development`. Webpack will produce `public/css/styles.bundle.css`. This file injects Tailwind CSS's base styles.
 
 ```
                 Asset      Size      Chunks             Chunk Names
