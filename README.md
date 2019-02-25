@@ -1,1 +1,1 @@
-# laravel-tailwindcss-webpack
+laravel-tailwindcss-webpack
