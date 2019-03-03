@@ -27,7 +27,7 @@ $ mkdir resources/css
 $ touch resources/css/styles.css
 ```
 
-Add Tailwind CSS preflight and utilities.
+Add Tailwind CSS preflight and utilities in `styles.css`.
 
 ```resources/css/styles.css
 @tailwind preflight;
