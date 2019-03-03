@@ -1,62 +1,50 @@
 # Laravel - Tailwind CSS - webpack	
 Build assets without using laravel-mix.	
 
- ## Installation	
+## Installation	
 
- ```	
-$ composer install	
-$ npm install	
-```	
+```
+$ composer create-project --prefer-dist laravel/laravel laravel-tailwindcss
+$ mv postcss.config.js webpack.config.js package.json ./laravel-tailwindcss 
+$ cd laravel-tailwindcss
+$ yarn install
+```
 
- ## Build a CSS file with tailwind CSS	
+## initialize tailwind CSS
 
- Run `$ npx webpack --mode development`. Webpack will produce `public/css/styles.bundle.css`. This file injects Tailwind CSS's base styles.	
+Create Tailwind config file `tailwind.js`
 
- ```	
-                Asset      Size      Chunks             Chunk Names	
-css/styles.bundle.css  1.09 MiB  css/styles  [emitted]  css/styles	
-```	
+```
+$ yarn tailwind init
+```
 
- ## webpack.config.js	
+## Create CSS file
 
- ```js	
-const path = require("path")	
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')	
- module.exports = {	
-  entry: {	
-    "css/styles": path.resolve(__dirname, './resources/css/styles.css')	
-  },	
-  output: {	
-      path: path.resolve(__dirname, 'public'),	
-      filename: '[name].bundle.js'	
-  },	
-  devtool: 'inline-source-map',	
-  module: {	
-    rules: [	
-      {	
-        test: /\.css$/,	
-        exclude: /node_modules/,	
-        use: [	
-          {	
-            loader: MiniCssExtractPlugin.loader,	
-          },	
-          {	
-            loader: 'css-loader',	
-            options: {	
-              importLoaders: 1,	
-            }	
-          },	
-          {	
-            loader: 'postcss-loader'	
-          }	
-        ]	
-      }	
-    ]	
-  },	
-  plugins: [	
-    new MiniCssExtractPlugin({	
-      filename: '[name].bundle.css'	
-    }),	
-  ]	
-};	
+```
+$ mkdir resources/css
+$ touch resources/css/styles.css
+```
+
+Add Tailwind CSS preflight and utilities.
+
+```resources/css/styles.css
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Build a CSS file	
+
+Run `$ yarn webpack --mode development`. Webpack will produce `public/css/styles.bundle.css`. This file injects Tailwind CSS's base styles.	
+
+```
+                Asset      Size  Chunks             Chunk Names
+css/styles.bundle.css  1.09 MiB  styles  [emitted]  styles
+  js/styles.bundle.js  8.77 KiB  styles  [emitted]  styles
+Entrypoint styles = css/styles.bundle.css js/styles.bundle.js
+```
+
+## Requiere bundled CSS in blade
+```
+<link href="{{ asset('css/styles.bundle.css') }}" rel="stylesheet">
 ```
