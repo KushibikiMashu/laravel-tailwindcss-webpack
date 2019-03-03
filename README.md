@@ -23,7 +23,8 @@ $ yarn tailwind init
 ## Create CSS file
 
 ```
-$ mkdir -p resources/css/styles.css
+$ mkdir resources/css
+$ touch resources/css/styles.css
 ```
 
 Add Tailwind CSS preflight and utilities in `styles.css`.
