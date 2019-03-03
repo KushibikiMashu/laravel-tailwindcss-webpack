@@ -1,6 +1,8 @@
 # Laravel - Tailwind CSS - webpack	
 Build assets without using laravel-mix.	
 
+Laravel 5.7
+
 ## Installation	
 
 ```
