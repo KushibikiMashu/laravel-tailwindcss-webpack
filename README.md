@@ -49,7 +49,7 @@ css/styles.bundle.css  1.09 MiB  styles  [emitted]  styles
 Entrypoint styles = css/styles.bundle.css js/styles.bundle.js
 ```
 
-## Requiere bundled CSS in blade
-```
+## Require bundled CSS in blade
+```blade
 <link href="{{ asset('css/styles.bundle.css') }}" rel="stylesheet">
 ```
