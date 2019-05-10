@@ -2,10 +2,13 @@
 Build assets without using laravel-mix.	
 
 Laravel 5.7
+Tailwind CSS v0.7.4
 
 ## Installation	
 
 ```
+$ git clone https://github.com/KushibikiMashu/laravel-tailwindcss-webpack.git
+$ cd laravel-tailwindcss-webpack
 $ composer create-project --prefer-dist laravel/laravel laravel-tailwindcss
 $ mv postcss.config.js webpack.config.js package.json ./laravel-tailwindcss 
 $ cd laravel-tailwindcss
